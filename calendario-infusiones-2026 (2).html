@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Infusiones 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #a47acc;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+        }
+        
+        .digestiva { background: #4ade80; }
+        .relajante { background: #825eb5; }
+        .energizante { background: #fb923c; }
+        .inmunidad { background: #60a5fa; }
+        
+        .months-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .month-card {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            border-top: 4px solid #a47acc;
+        }
+        
+        .month-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        
+        .month-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #a47acc;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .season {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .infusion-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid;
+        }
+        
+        .infusion-item.digestiva { border-left-color: #4ade80; }
+        .infusion-item.relajante { border-left-color: #825eb5; }
+        .infusion-item.energizante { border-left-color: #fb923c; }
+        .infusion-item.inmunidad { border-left-color: #60a5fa; }
+        
+        .infusion-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        
+        .infusion-benefit {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .category-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin-top: 5px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .tag-digestiva { background: #4ade80; }
+        .tag-relajante { background: #825eb5; }
+        .tag-energizante { background: #fb923c; }
+        .tag-inmunidad { background: #60a5fa; }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .months-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍵 Calendario de Infusiones 2026</h1>
+        <p class="subtitle">Las mejores infusiones para cada mes del año</p>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color digestiva"></div>
+                <span>Digestiva</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color relajante"></div>
+                <span>Relajante</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color energizante"></div>
+                <span>Energizante</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color inmunidad"></div>
+                <span>Inmunidad</span>
+            </div>
+        </div>
+        
+        <div class="months-grid">
+            <!-- ENERO -->
+            <div class="month-card">
+                <div class="month-name">Enero</div>
+                <div class="season">🌙 Invierno - Propósitos y renovación</div>
+                
+                <div class="infusion-item inmunidad">
+                    <div class="infusion-name">🍋 Jengibre con Limón</div>
+                    <div class="infusion-benefit">Fortalece el sistema inmune después de las fiestas. Ayuda a combatir resfriados y mejora la digestión.</div>
+                    <span class="category-tag tag-inmunidad">Inmunidad</span>
+                </div>
+                
+                <div class="infusion-item energizante">
+                    <div class="infusion-name">🌿 Té Verde con Menta</div>
+                    <div class="infusion-benefit">Energía natural para comenzar el año. Antioxidante y estimula el metabolismo.</div>
+                    <span class="category-tag tag-energizante">Energizante</span>
+                </div>
+                
+                <div class="infusion-item digestiva">
+                    <div class="infusion-name">🌸 Hinojo y Anís</div>
+                    <div class="infusion-benefit">Perfecta después de comidas pesadas. Reduce la hinchazón abdominal.</div>
+                    <span class="category-tag tag-digestiva">Digestiva</span>
+                </div>
+            </div>
+            
+            <!-- FEBRERO -->
+            <div class="month-card">
+                <div class="month-name">Febrero</div>
+                <div class="season">💝 Invierno - Amor propio y bienestar</div>
+                
+                <div class="infusion-item relajante">
+                    <div class="infusion-name">🌺 Lavanda y Manzanilla</div>
+                    <div class="infusion-benefit">Calma la ansiedad y promueve el sueño reparador. Ideal para noches frías.</div>
+                    <span class="category-tag tag-relajante">Relajante</span>
+                </div>
+                
+                <div class="infusion-item inmunidad">
+                    <div class="infusion-name">🍊 Cúrcuma con Naranja</div>
+                    <div class="infusion-benefit">Antiinflamatorio natural. Protege contra gripes y resfriados de temporada.</div>
+                    <span class="category-tag tag-inmunidad">Inmunidad</span>
+                </div>
+                
+                <div class="infusion-item energizante">
+                    <div class="infusion-name">🌹 Hibisco con Canela</div>
+                    <div class="infusion-benefit">Rica en vitamina C. Mejora la circulación y da energía.</div>
+                    <span class="category-tag tag-energizante">Energizante</span>
+                </div>
+            </div>
+            
+            <!-- MARZO -->
+            <div class="month-card">
+                <div class="month-name">Marzo</div>
+                <div class="season">🌸 Primavera - Renovación y limpieza</div>
+                
+                <div class="infusion-item digestiva">
+                    <div class="infusion-name">🍃 Diente de León</div>
+                    <div class="infusion-benefit">Depurativa del hígado. Perfecta para la limpieza de primavera del organismo.</div>
+                    <span class="category-tag tag-digestiva">Digestiva</span>
+                </div>
+                
+                <div class="infusion-item energizante">
+                    <div class="infusion-name">🍋 Té Matcha</div>
+                    <div class="infusion-benefit">Energía sostenida sin nerviosismo. Rico en antioxidantes y L-teanina.</div>
+                    <span class="category-tag tag-energizante">Energizante</span>
+                </div>
+                
+                <div class="infusion-item relajante">
+                    <div class="infusion-name">🌼 Tila con Melisa</div>
+                    <div class="infusion-benefit">Alivia alergias primaverales. Calma el sistema nervioso.</div>
+                    <span class="category-tag tag-relajante">Relajante</span>
+                </div>
+            </div>
+            
+            <!-- ABRIL -->
+            <div class="month-card">
+                <div class="month-name">Abril</div>
+                <div class="season">🌷 Primavera - Florecimiento y vitalidad</div>
+                
+                <div class="infusion-item energizante">
+                    <div class="infusion-name">🌿 Yerba Mate</div>
+                    <div class="infusion-benefit">Energía y concentración para la productividad primaveral. Rica en vitaminas.</div>
+                    <span class="category-tag tag-energizante">Energizante</span>
+                </div>
+                
+                <div class="infusion-item digestiva">
+                    <div class="infusion-name">🍃 Menta Piperita</div>
+                    <div class="infusion-benefit">Refresca y mejora la digestión. Alivia dolores de cabeza.</div>
+                    <span class="category-tag tag-digestiva">Digestiva</span>
+                </div>
+                
+                <div class="infusion-item inmunidad">
+                    <div class="infusion-name">🌺 Equinácea</div>
+                    <div class="infusion-benefit">Previene resfriados de cambio de estación. Fortalece defensas.</div>
+                    <span class="category-tag tag-inmunidad">Inmunidad</span>
+                </div>
+            </div>
+            
+            <!-- MAYO -->
+            <div class="month-card">
+                <div class="month-name">Mayo</div>
+                <div class="season">☀️ Primavera - Luz y alegría</div>
+                
+                <div class="infusion-item relajante">
+                    <div class="infusion-name">🌸 Jazmín con Rosas</div>
+                    <div class="infusion-benefit">Aromática y relajante. Mejora el estado de ánimo y reduce el estrés.</div>
+                    <span class="category-tag tag-relajante">Relajante</span>
+                </div>
+                
+                <div class="infusion-item digestiva">
+                    <div class="infusion-name">🌿 Boldo</div>
+                    <div class="infusion-benefit">Estimula la función hepática. Facilita la digestión de grasas.</div>
+                    <span class="category-tag tag-digestiva">Digestiva</span>
+                </div>
+                
+                <div class="infusion-item energizante">
+                    <div class="infusion-name">🍋 Té Blanco con Limón</div>
+                    <div class="infusion-benefit">Delicado y refrescante. Alto en antioxidantes, bajo en cafeína.</div>
+                    <span class="category-tag tag-energizante">Energizante</span>
+                </div>
+            </div>
+            
+            <!-- JUNIO -->
+            <div class="month-card">
+                <div class="month-name">Junio</div>
+                <div class="season">🌞 Verano - Frescura y hidratación</div>
+                
+                <div class="infusion-item digestiva">
+                    <div class="infusion-name">🍃 Menta Helada</div>
+                    <div class="infusion-benefit">Refrescante y digestiva. Perfecta fría para el calor del verano.</div>
+                    <span class="category-tag tag-digestiva">Digestiva</span>
+                </div>
+                
+                <div class="infusion-item energizante">
+                    <div class="infusion-name">🌺 Hibisco Frío</div>
+                    <div class="infusion-benefit">Hidratante y rica en vitamina C. Regula la presión arterial.</div>
+                    <span class="category-tag tag-energizante">Energizante</span>
+                </div>
+                
+                <div class="infusion-item relajante">
+                    <div class="infusion-name">🍑 Melocotón con Manzanilla</div>
+                    <div class="infusion-benefit">Dulce y calmante. Ayuda a dormir en noches calurosas.</div>
+                    <span class="category-tag tag-relajante">Relajante</span>
+                </div>
+            </div>
+            
+            <!-- JULIO -->
+            <div class="month-card">
+                <div class="month-name">Julio</div>
+                <div class="season">🏖️ Verano - Vacaciones y relajación</div>
+                
+                <div class="infusion-item relajante">
+                    <div class="infusion-name">🌿 Pasiflora</div>
+                    <div class="infusion-benefit">Reduce la ansiedad vacacional. Promueve el descanso profundo.</div>
+                    <span class="category-tag tag-relajante">Relajante</span>
+                </div>
+                
+                <div class="infusion-item digestiva">
+                    <div class="infusion-name">🍋 Agua de Jamaica</div>
+                    <div class="infusion-benefit">Refresca y ayuda a la digestión veraniega. Diurética natural.</div>
+                    <span class="category-tag tag-digestiva">Digestiva</span>
+                </div>
+                
+                <div class="infusion-item inmunidad">
+                    <div class="infusion-name">🍊 Té Verde Helado con Cítricos</div>
+                    <div class="infusion-benefit">Antioxidante poderoso. Protege la piel del sol desde adentro.</div>
+                    <span class="category-tag tag-inmunidad">Inmunidad</span>
+                </div>
+            </div>
+            
+            <!-- AGOSTO -->
+            <div class="month-card">
+                <div class="month-name">Agosto</div>
+                <div class="season">🌅 Verano - Energía y vitalidad</div>
+                
+                <div class="infusion-item energizante">
+                    <div class="infusion-name">🥭 Té Rooibos con Mango</div>
+                    <div class="infusion-benefit">Sin cafeína, perfecto para todo el día. Rico en minerales.</div>
+                    <span class="category-tag tag-energizante">Energizante</span>
+                </div>
+                
+                <div class="infusion-item digestiva">
+                    <div class="infusion-name">🌿 Orégano</div>
+                    <div class="infusion-benefit">Antibacteriana. Alivia malestares estomacales del verano.</div>
+                    <span class="category-tag tag-digestiva">Digestiva</span>
+                </div>
+                
+                <div class="infusion-item relajante">
+                    <div class="infusion-name">🌼 Valeriana</div>
+                    <div class="infusion-benefit">Para conciliar el sueño en noches cálidas. Muy relajante.</div>
+                    <span class="category-tag tag-relajante">Relajante</span>
+                </div>
+            </div>
+            
+            <!-- SEPTIEMBRE -->
+            <div class="month-card">
+                <div class="month-name">Septiembre</div>
+                <div class="season">🍂 Otoño - Transición y adaptación</div>
+                
+                <div class="infusion-item inmunidad">
+                    <div class="infusion-name">🍯 Tomillo con Miel</div>
+                    <div class="infusion-benefit">Protege contra resfriados otoñales. Antiséptico natural.</div>
+                    <span class="category-tag tag-inmunidad">Inmunidad</span>
+                </div>
+                
+                <div class="infusion-item energizante">
+                    <div class="infusion-name">☕ Chai Especiado</div>
+                    <div class="infusion-benefit">Energía reconfortante. Mejora la circulación y digestión.</div>
+                    <span class="category-tag tag-energizante">Energizante</span>
+                </div>
+                
+                <div class="infusion-item digestiva">
+                    <div class="infusion-name">🌿 Romero</div>
+                    <div class="infusion-benefit">Estimula la memoria y concentración. Depurativa.</div>
+                    <span class="category-tag tag-digestiva">Digestiva</span>
+                </div>
+            </div>
+            
+            <!-- OCTUBRE -->
+            <div class="month-card">
+                <div class="month-name">Octubre</div>
+                <div class="season">🎃 Otoño - Cosecha y gratitud</div>
+                
+                <div class="infusion-item relajante">
+                    <div class="infusion-name">🍎 Manzana con Canela</div>
+                    <div class="infusion-benefit">Reconfortante y dulce. Regula el azúcar en sangre.</div>
+                    <span class="category-tag tag-relajante">Relajante</span>
+                </div>
+                
+                <div class="infusion-item inmunidad">
+                    <div class="infusion-name">🍋 Jengibre y Cúrcuma</div>
+                    <div class="infusion-benefit">Antiinflamatorio potente. Prepara el cuerpo para el invierno.</div>
+                    <span class="category-tag tag-inmunidad">Inmunidad</span>
+                </div>
+                
+                <div class="infusion-item digestiva">
+                    <div class="infusion-name">🌸 Cardamomo</div>
+                    <div class="infusion-benefit">Aromática y digestiva. Alivia gases y náuseas.</div>
+                    <span class="category-tag tag-digestiva">Digestiva</span>
+                </div>
+            </div>
+            
+            <!-- NOVIEMBRE -->
+            <div class="month-card">
+                <div class="month-name">Noviembre</div>
+                <div class="season">🍁 Otoño - Introspección y calidez</div>
+                
+                <div class="infusion-item energizante">
+                    <div class="infusion-name">☕ Cacao con Especias</div>
+                    <div class="infusion-benefit">Eleva el ánimo en días grises. Rico en magnesio.</div>
+                    <span class="category-tag tag-energizante">Energizante</span>
+                </div>
+                
+                <div class="infusion-item relajante">
+                    <div class="infusion-name">🌿 Toronjil (Melisa)</div>
+                    <div class="infusion-benefit">Calma la ansiedad. Mejora la digestión nerviosa.</div>
+                    <span class="category-tag tag-relajante">Relajante</span>
+                </div>
+                
+                <div class="infusion-item inmunidad">
+                    <div class="infusion-name">🌺 Saúco</div>
+                    <div class="infusion-benefit">Previene gripes. Reduce fiebre y congestión.</div>
+                    <span class="category-tag tag-inmunidad">Inmunidad</span>
+                </div>
+            </div>
+            
+            <!-- DICIEMBRE -->
+            <div class="month-card">
+                <div class="month-name">Diciembre</div>
+                <div class="season">🎄 Invierno - Celebración y cierre</div>
+                
+                <div class="infusion-item relajante">
+                    <div class="infusion-name">🎁 Vainilla con Lavanda</div>
+                    <div class="infusion-benefit">Combate el estrés navideño. Dulce y reconfortante.</div>
+                    <span class="category-tag tag-relajante">Relajante</span>
+                </div>
+                
+                <div class="infusion-item digestiva">
+                    <div class="infusion-name">🌟 Jengibre con Limón y Miel</div>
+                    <div class="infusion-benefit">Perfecta para cenas festivas. Facilita digestión pesada.</div>
+                    <span class="category-tag tag-digestiva">Digestiva</span>
+                </div>
+                
+                <div class="infusion-item inmunidad">
+                    <div class="infusion-name">🍊 Naranja con Clavo</div>
+                    <div class="infusion-benefit">Aromática navideña. Fortalece defensas en época de fiestas.</div>
+                    <span class="category-tag tag-inmunidad">Inmunidad</span>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px; padding: 20px; background: #f1f5f9; border-radius: 10px;">
+            <h3 style="color: #a47acc; margin-bottom: 10px;">☕ Consejos para Preparar tus Infusiones:</h3>
+            <ul style="color: #444; line-height: 1.8; padding-left: 20px;">
+                <li><strong>Temperatura:</strong> Usa agua a 80-90°C para hierbas delicadas, 95-100°C para raíces y especias</li>
+                <li><strong>Tiempo:</strong> Deja reposar 5-10 minutos para extraer todos los beneficios</li>
+                <li><strong>Frescura:</strong> Siempre que puedas, usa hierbas frescas o de calidad orgánica</li>
+                <li><strong>Endulzar:</strong> Usa miel cruda, stevia o agave en lugar de azúcar refinada</li>
+                <li><strong>Momento ideal:</strong> Las digestivas después de comer, las relajantes antes de dormir, las energizantes por la mañana</li>
+                <li><strong>Hidratación:</strong> En verano, prepara tus infusiones favoritas frías para mantenerte hidratada</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
